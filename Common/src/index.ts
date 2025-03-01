@@ -1,8 +1,8 @@
 import {z}  from "zod";
 
 export const signupschema = z.object({
-    firstname:z.string().optional(),
-    lastname:z.string().optional(),
+    firstname:z.string(),
+    lastname:z.string(),
     email:z.string().email(),
     password:z.string().min(5)
 });
@@ -13,15 +13,15 @@ export const signinschema = z.object({
 });
 
 export const postschema = z.object({
-    title:z.string().optional(),
-    content:z.string().optional(),
-    ispublished:z.boolean()
+    title:z.string(),
+    content:z.string(),
+    ispublished:z.boolean().optional().default(false)
     
 });
 export const updateschema = z.object({
-    title:z.string().optional(),
-    content:z.string().optional(),
-    ispublished:z.boolean()
+    title:z.string(),
+    content:z.string(),
+    ispublished:z.boolean().optional().default(false)
     
 })
 
